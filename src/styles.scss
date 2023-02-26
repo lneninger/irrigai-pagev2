@@ -4,6 +4,16 @@
 @import "tailwindcss/utilities";
 
 
+@font-face {
+    font-family: slabo-regular;
+    src: url(./assets/fonts/Slabo27px-Regular.ttf);
+}
+
+@font-face {
+    font-family: righteous-regular;
+    src: url(./assets/fonts/Righteous-Regular.ttf);
+}
+
 body {
     @apply bg-indigo-900 text-gray-50
 }
