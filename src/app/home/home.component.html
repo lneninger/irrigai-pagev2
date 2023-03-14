@@ -5,8 +5,8 @@
             <h1>Your irrigation solution</h1>
             <p class="text-white">
                 Irrigai provide you the opportunity to not just to automate irrigation, but have access to continues
-                improvement of your irrigation system. It offers simplified configuration and access to the best 
-                configuration based on your location's weather and your type of crop. 
+                improvement of your irrigation system. It offers simplified configuration and access to the best
+                configuration based on your location's weather and your type of crop.
             </p>
         </article>
     </div>
@@ -21,7 +21,7 @@
                         <span class="italic">{{this.applicationVersion}}</span>
                     </div>
 
-                    <a [routerLink]="this.applicationDownloadUrl" download
+                    <a [href]="this.applicationDownloadUrl" [attr.download]="this.applicationDownloadFielName"
                         class="flex w-1/3  md:w-2/3 justify-center border border-solid border-gray-300 bg-indigo-200 rounded-full p-2 m-2">
                         <span class="text-2xl text-center">Download</span>
                     </a>
@@ -35,7 +35,7 @@
                         <span class="italic">{{this.backgroundVersion}}</span>
                     </div>
 
-                    <a [routerLink]="this.backgroundDownloadUrl" download
+                    <a [href]="this.backgroundDownloadUrl" download
                         class="flex w-1/3  md:w-2/3 justify-center border border-solid border-gray-300 bg-indigo-200 rounded-full p-2 m-2 hover:scale-105">
                         <span class="text-2xl text-center">Download</span>
                     </a>
