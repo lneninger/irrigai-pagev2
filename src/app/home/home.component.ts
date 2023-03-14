@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   applicationVersion: any;
 
   backgroundDownloadUrl: undefined | string;
+  backgroundDownloadFielName: undefined | string;
   backgroundReleases: any[] = [];
   backgroundLatestRelease: any;
   backgroundLatestReleaseResources: any;
@@ -41,6 +42,7 @@ export class HomeComponent implements OnInit {
       this.applicationLatestReleaseResources = await this.githubService.getFromUrl(this.applicationLatestRelease['assets_url']);
       this.applicationDownloadUrl = this.applicationLatestReleaseResources[0]['browser_download_url'];
       this.applicationVersion = this.applicationLatestRelease['tag_name'];
+      this.applicationDownloadFielName = this.applicationLatestRelease[0]['name']
     }
   }
 
@@ -51,7 +53,7 @@ export class HomeComponent implements OnInit {
       this.backgroundLatestReleaseResources = await this.githubService.getFromUrl(this.backgroundLatestRelease['assets_url']);
       this.backgroundDownloadUrl = this.backgroundLatestReleaseResources[0]['browser_download_url'];
       this.backgroundVersion = this.backgroundLatestRelease['tag_name'];
-      this.applicationDownloadFielName = this.backgroundLatestReleaseResources[0]['name']
+      this.backgroundDownloadFielName = this.backgroundLatestReleaseResources[0]['name']
     }
   }
 }
