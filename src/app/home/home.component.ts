@@ -25,13 +25,12 @@ export class HomeComponent implements OnInit {
   constructor(private githubService: GithubService) { }
 
   async ngOnInit() {
-    try {
-      await this.getApplicationLatestRelease();
-    } catch { }
+    const promises: Promise<any>[] = [];
+      promises.push(this.getApplicationLatestRelease().catch(error => {}));
 
-    try {
-      await this.getBackgroundLatestRelease();
-    } catch { }
+      promises.push(this.getBackgroundLatestRelease().catch(error => {}));
+
+      await Promise.all(promises);
 
   }
 
